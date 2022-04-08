@@ -1,38 +1,132 @@
-.App {
+:root{
+  --mainOrange:#e19200;
+  --lightOrange:#e6b65d;
+  --mainWhite:#f3f3f3;
+  --mainDark:#282523;
+  --mainRed:#cf3d15;
+  --lightRed: #c77b66;
+}
+
+body{
+  font-family: 'Dosis', sans-serif !important;
+  background: var(--mainWhite) !important;
+  font-size: 20px !important;
+  color: var(--mainDark) !important;
+  margin:0;
+}
+
+a{
+  text-decoration: none !important;
+}
+
+.text-title{
+  font-family: 'Varela Round', sans-serif;
+  font-weight: 700;
+  letter-spacing: .3rem;
+  text-transform: uppercase;
+}
+
+.text-orange{
+  color: var(--mainOrange);
+}
+
+.text-bright{
+  color: var(--lightOrange);
+}
+
+.navbar-brand{
+    max-width: 8rem;
+    max-height: 4rem;
+}
+
+.gallery-container{
+  margin-top: 2rem;
+}
+
+.card-img-top{
+  width: 100%;
+  height: 23rem;
+  object-fit: cover;
+}
+
+.detailsTitle{
+  font-size: 54px;
+}
+
+.btn-black{
+  background:transparent;
+  padding: 0.26rem 0.7rem !important;
+  text-transform: capitalize;
+  font-size: .8rem !important;
+  color: var(--mainDark);
+  border-radius: 0 !important;
+  border: 0.1rem var(--mainDark) solid !important;
+}
+
+.btn-black:hover{
+  background: var(--mainDark) !important;
+  color: var(--mainWhite) !important;
+}
+
+.cart-icon{
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--mainRed)
+}
+
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
   text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
 }
